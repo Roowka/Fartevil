@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     bool _isFacingRight = true;
     public Animator animator;
+    
+    [Header("PlayerStatus")]
+    public bool isDead = false;
     
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -20,6 +24,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheckPos;
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask groundLayer;
+    
+    [Header("SpikeCheck")]
+    public Transform spikeCheckPos;
+    public Vector2 spikeCheckSize = new Vector2(0.5f, 0.05f);
+    public LayerMask spikeLayer;
     
     [Header("Gravity")]
     public float baseGravity = 2f;
@@ -38,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(_horizontalMovement * moveSpeed, rb.linearVelocity.y);
         GroundCheck();
+        SpikeCheck();
         Gravity();
         Flip();
         
@@ -56,6 +66,21 @@ public class PlayerMovement : MonoBehaviour
         {
             _jumpsRemaining = maxJumps;
         }
+    }
+
+    private void SpikeCheck()
+    {
+        if (Physics2D.OverlapBox(spikeCheckPos.position, spikeCheckSize, 0, spikeLayer))
+        {
+            animator.SetTrigger("die");
+        } 
+    }
+
+    public void FinishedDying()
+    {
+        isDead = true;
+        Debug.Log(isDead);
+        animator.SetBool("isDead", isDead);
     }
 
     private void Gravity()
