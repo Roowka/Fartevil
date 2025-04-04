@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     bool _isFacingRight = true;
     public Animator animator;
+    public ParticleSystem smokeFX;
+    public ParticleSystem fartFX;
     
     [Header("PlayerStatus")]
     public bool isDead = false;
@@ -24,6 +26,7 @@ public class Player : MonoBehaviour
     public Transform groundCheckPos;
     public Vector2 groundCheckSize = new Vector2(0.5f, 0.05f);
     public LayerMask groundLayer;
+    private bool _isGrounded;
     
     [Header("SpikeCheck")]
     public Transform spikeCheckPos;
@@ -64,7 +67,12 @@ public class Player : MonoBehaviour
     {
         if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
         {
+            _isGrounded = true;
             _jumpsRemaining = maxJumps;
+        }
+        else
+        {
+            _isGrounded = false;
         }
     }
 
@@ -104,13 +112,12 @@ public class Player : MonoBehaviour
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 _jumpsRemaining--;
-                animator.SetTrigger("jump");
+                JumpFX();
             }
             else if (context.canceled)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
                 _jumpsRemaining--;
-                animator.SetTrigger("jump");
             }
         }
     }
@@ -123,6 +130,19 @@ public class Player : MonoBehaviour
             Vector3 ls = transform.localScale;
             ls.x *= -1f;
             transform.localScale = ls;
+            smokeFX.Play();
+        }
+    }
+
+    private void JumpFX()
+    {
+        animator.SetTrigger("jump");
+        if(_isGrounded){
+            smokeFX.Play();
+        }
+        else
+        {
+            fartFX.Play();
         }
     }
 
