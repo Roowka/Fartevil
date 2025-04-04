@@ -76,10 +76,10 @@ public class Player : MonoBehaviour
         } 
     }
 
-    public void FinishedDying()
+    public void Die()
     {
         isDead = true;
-        Debug.Log(isDead);
+        Debug.Log("Mort : "+isDead);
         animator.SetBool("isDead", isDead);
     }
 
