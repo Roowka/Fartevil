@@ -7,11 +7,13 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     bool _isFacingRight = true;
     public Animator animator;
+    
+    [Header("Particles")]
     public ParticleSystem smokeFX;
     public ParticleSystem fartFX;
     
     [Header("PlayerStatus")]
-    public bool isDead = false;
+    private bool _isDead = false;
     
     [Header("Movement")]
     public float moveSpeed = 5f;
@@ -21,6 +23,10 @@ public class Player : MonoBehaviour
     public float jumpPower = 5f;
     public int maxJumps = 2;
     int _jumpsRemaining;
+    
+    [Header("Farts")]
+    public AudioSource fartAudioSource;
+    public AudioClip[] fartClips;
     
     [Header("GroundCheck")]
     public Transform groundCheckPos;
@@ -37,6 +43,7 @@ public class Player : MonoBehaviour
     public float baseGravity = 2f;
     public float maxFallSpeed = 18f;
     public float fallSpeedMultiplier = 2f;
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -86,9 +93,9 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        isDead = true;
-        Debug.Log("Mort : "+isDead);
-        animator.SetBool("isDead", isDead);
+        _isDead = true;
+        Debug.Log("Mort : "+_isDead);
+        animator.SetBool("isDead", _isDead);
     }
 
     private void Gravity()
@@ -143,7 +150,17 @@ public class Player : MonoBehaviour
         else
         {
             fartFX.Play();
+            PlayFartSound();
         }
+    }
+    
+    public void PlayFartSound()
+    {
+        if (fartClips.Length == 0 || fartAudioSource == null) return;
+        
+        AudioClip clip = fartClips[Random.Range(0, fartClips.Length)];
+        fartAudioSource.pitch = Random.Range(0.8f, 3f);
+        fartAudioSource.PlayOneShot(clip);
     }
 
     private void OnDrawGizmosSelected()
