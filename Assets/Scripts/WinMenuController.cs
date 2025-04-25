@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOverMenuController : MonoBehaviour
+public class WinMenuController : MonoBehaviour
 {
     public void onRestartClick()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
     }
 

@@ -7544,7 +7544,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -15838,8 +15838,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.000000037844217, y: -0.019724721}
-  m_Size: {x: 0.3800943, y: 1.0394493}
+  m_Offset: {x: -0.000000044703484, y: -0.008566141}
+  m_Size: {x: 0.3800943, y: 1.0171323}
   m_Direction: 0
 --- !u!95 &2015396944
 Animator:
@@ -16009,7 +16009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectAudioSource: {fileID: 2015396948}
-  collectClip: {fileID: 8300000, guid: 1838516b7145e49a2a948146023bc9af, type: 3}
+  collectClip: {fileID: 8300000, guid: 9ae9d04cacdf0426c891e926accf6784, type: 3}
 --- !u!82 &2015396948
 AudioSource:
   m_ObjectHideFlags: 0
