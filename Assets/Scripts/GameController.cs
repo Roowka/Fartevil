@@ -1,10 +1,21 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class GameController : MonoBehaviour
 {
+    public static GameController Instance;
     int progressAmount;
     public Slider progressSlider;
+    
+    public bool toiletUnlocked = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +32,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (progressAmount >= 100)
         {
             // Chiottes dévérouillées
-            Debug.Log("BIEN JOUE BG LAA " + progressAmount);
+            toiletUnlocked = true;
+            Debug.Log("BIEN JOUE BG LAA " + progressAmount + " "+ toiletUnlocked);
+            
         }
     }
     // Update is called once per frame
