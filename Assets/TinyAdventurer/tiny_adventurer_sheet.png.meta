@@ -225,6 +225,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1209,7 +1222,51 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tiny_adventurer_sheet_0: 9092291903488109178
+      tiny_adventurer_sheet_1: -644772571649085173
+      tiny_adventurer_sheet_10: 5752476420775901553
+      tiny_adventurer_sheet_11: -7533661407738055111
+      tiny_adventurer_sheet_12: -3392544426466934933
+      tiny_adventurer_sheet_13: 1638682861914215007
+      tiny_adventurer_sheet_14: -3484372050836921870
+      tiny_adventurer_sheet_15: 5454021170334640817
+      tiny_adventurer_sheet_16: 3921938253488507300
+      tiny_adventurer_sheet_17: -9047106222142825413
+      tiny_adventurer_sheet_18: -6605047311822259641
+      tiny_adventurer_sheet_19: -3363409793877853138
+      tiny_adventurer_sheet_2: 1039643240598451465
+      tiny_adventurer_sheet_20: -8727430207583914403
+      tiny_adventurer_sheet_21: -3263653096306099486
+      tiny_adventurer_sheet_22: 3723216751021156933
+      tiny_adventurer_sheet_23: 7007553061264777662
+      tiny_adventurer_sheet_24: -7188772150313061581
+      tiny_adventurer_sheet_25: 7526771260721608656
+      tiny_adventurer_sheet_26: 569060980872972819
+      tiny_adventurer_sheet_27: 5671675307484612471
+      tiny_adventurer_sheet_28: -4818939685623738889
+      tiny_adventurer_sheet_29: 7533832127855938
+      tiny_adventurer_sheet_3: -6111932286688788655
+      tiny_adventurer_sheet_30: -522435135915285419
+      tiny_adventurer_sheet_31: 7839614636639662127
+      tiny_adventurer_sheet_32: 73604831667555055
+      tiny_adventurer_sheet_33: -6222975705148193534
+      tiny_adventurer_sheet_34: 8568738795563160564
+      tiny_adventurer_sheet_35: -173365718597820735
+      tiny_adventurer_sheet_36: -6180416358301115638
+      tiny_adventurer_sheet_37: 1775366926375359617
+      tiny_adventurer_sheet_38: 7814278431996862966
+      tiny_adventurer_sheet_39: 580181380890985902
+      tiny_adventurer_sheet_4: -6363293810827010900
+      tiny_adventurer_sheet_40: 6914648600328398796
+      tiny_adventurer_sheet_41: -1947853668140091664
+      tiny_adventurer_sheet_42: -2041681527299905916
+      tiny_adventurer_sheet_43: -7345534146039864924
+      tiny_adventurer_sheet_5: 8972295553463047026
+      tiny_adventurer_sheet_6: 3805219326876003798
+      tiny_adventurer_sheet_7: 7425284655625226288
+      tiny_adventurer_sheet_8: 279310717671930564
+      tiny_adventurer_sheet_9: 464132440920364697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

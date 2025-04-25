@@ -16,11 +16,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
     void IncreaseProgressAmount(int amount)
     {
         progressAmount += amount;
+        Debug.Log(progressAmount);
         progressSlider.value = progressAmount;
         if (progressAmount >= 100)
         {
             // Chiottes dévérouillées
-            Debug.Log("BIEN JOUE BG LAA");
+            Debug.Log("BIEN JOUE BG LAA " + progressAmount);
         }
     }
     // Update is called once per frame

@@ -1,6 +1,7 @@
 using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -96,6 +97,7 @@ public class Player : MonoBehaviour
         _isDead = true;
         Debug.Log("Mort : "+_isDead);
         animator.SetBool("isDead", _isDead);
+        SceneManager.LoadScene("GameOverScene");
     }
 
     private void Gravity()
