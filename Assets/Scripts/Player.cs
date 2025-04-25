@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
     {
         if (_jumpsRemaining > 0)
         {
-            if (context.performed)
+            if (context.performed) 
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
                 _jumpsRemaining--;
